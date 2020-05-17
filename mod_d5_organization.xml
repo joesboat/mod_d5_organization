@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.4" client="site" method="upgrade">
+	<name>D5 Organization</name>
+	<author>Joseph P. Gibson</author>
+	<creationDate>January 2019</creationDate>
+	<copyright>Copyright (C) 2018 Joseph P. Gibson. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>joe@joesboat.org</authorEmail>
+	<authorUrl>www.joesboat.org</authorUrl>
+	<version>1.0</version>
+	<description>Display organization and job assignments of a USPS District 5 Department.  This code was created in 2012 as a vanilla PHP program and is now converted to function as a Joomla Module.   A module instance is needed for each D5 department.</description>
+	<files>
+		<filename module="mod_d5_organization">mod_d5_organization.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<folder>tmpl</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="debug" label="Debug Controls">
+	        	<field 	name="siteLog"
+	        			type="list"
+	        			default="0"
+	        			label="Activate Logging"
+	        			description="Set to True to activate logging in module routines." >
+	        		<option value="1">True</option>
+	        		<option value="0">False</option>
+				</field>
+	        	<field 	name="siteDump"
+	        			type="list"
+	        			default="0"
+	        			label="Activate JDump"
+	        			description="Set to True to activate calling the extension 'JDump' routines." >
+	        		<option value="1">True</option>
+	        		<option value="0">False</option>
+				</field>
+			</fieldset>			
+			<fieldset name="source" label="Data Source">
+				<field name="dbsource"
+					type="radio"
+					label="Database Source"
+					description="Choose a local or remote database."
+					default="local"
+				>
+					<option value="local">Local Database</option>
+					<option value="remote">Remote Database</option>
+				</field>
+				<field
+					name="ipaddr"
+					type="text"
+					label="Database System IP Address"
+					description="Specify the IP address of the source database.  That system must be configured to accept MySql statements from this host."
+					default="0,0,0,0"
+				/>
+			</fieldset>
+			<fieldset name="orgsre" label="Module Function" 
+				description="Identifies the purpose of the module.  "
+			>
+				<field 
+					name="deptcode"
+					type="radio"
+					label="Select the department:"
+					description="Identify the department for this instance.  :."  
+					default="21000"
+				>
+					<option value="21000">Commanders</option>
+					<option value="22000">Executive</option>
+					<option value="23000">Educational</option>
+					<option value="24000">Administrative</option>
+					<option value="25000">Secretary</option>
+					<option value="26000">Treasurer</option>
+				</field>
+				<field
+					name="display_alias"
+					type="text"
+					label="Display Menu Item Alias."
+					description="Identifies the Menu Item that will be called from an item in the list. Field is needed when the 'Type of display(modtype)' field is set to an Event or Award List. Field should contain the menu-item alias of the desired Menu Item! It will become an element in the generated url. "
+					default="squadron-award"
+				/>
+				<field
+					name="distnum"
+					type="text"
+					label="District Number"
+					description="District Number"
+					default="5"
+				/>
+				<field
+					name="sqdcode"
+					type = "text"
+					label="Squadron Account Number"
+					description="Squadron Acccount Code"
+					default="4785"
+				/>
+				<field
+					name='scope'
+					type="list"
+					label="Limits on items returned."
+					description="Establishes a limit on the items listed.  Typically set to 'future' for event maintenance.  'All' will return everything."
+					default = "future"
+				>
+					<option value='all'>All Events, Awards or Objects</option>
+					<option value='future'>Only Future Events, Awards or Objects</option>
+				</field>
+			</fieldset>
+			<fieldset
+				name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" 
+					default="single_line"    />
+				<field 
+					name="heading"
+					type="text" 
+					label="Heading"
+					description="Heading"
+					default="Squadron Events"
+				/>
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>	
+</extension>
