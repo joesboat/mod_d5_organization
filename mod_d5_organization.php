@@ -42,7 +42,7 @@ $blob = $WebSites->getBlobsObject();
 	} else {
 		$dept = $params->get('deptcode');
 	}
-	$dept_jobs = $vhqab->getCommitteesAndJobAssignments($dept, $year, true );
+	$dept_jobs = $vhqab->getDepartmentJobAssignments($dept, $year, true );
 	$cert = $dept_jobs[$dept]['certificate'];
 	$pic_url = get_absolute_url(JURI::base()."modules/$mod_folder/assets/get_mbr_pic.php?certificate=$cert&width=80");  
 	$pic_avail = $blob->get_mbr_picture($cert,80);
@@ -59,8 +59,8 @@ $blob = $WebSites->getBlobsObject();
 		$hes_mbr = $vhqab->getJobAssignmentNames(28022, $year , true );
 		$hes = array_merge($hes,$hes_mbr);
 		$cdrs_url = get_absolute_url(JURI::base()."modules/$mod_folder/assets/cdr_list.php");
-		$general = $vhqab->getCommitteesAndJobAssignments(20400,$year,TRUE);
-		$standing = $vhqab->getCommitteesAndJobAssignments(20300,$year,TRUE);
+		$general = $vhqab->getDepartmentJobAssignments(20400,$year,TRUE);
+		$standing = $vhqab->getDepartmentJobAssignments(20300,$year,TRUE);
 	}
 	//$excom = $exc->search_for_record("jobcode='$dept' and year='$year'");
 	//$asst_excom = $exc->search_for_record("jobcode='". ($dept+1) ."' and year='$year'");

@@ -38,17 +38,17 @@ defined('_JEXEC') or die('Restricted access');
 			<col id='depts_col_2'>
 		</colgroup>
 		<tr class="table"><td colspan="2">&nbsp;</td></tr>
-		<tr class='tbl'>
-			<td class='tbl' colspan='2'>
-				<div class='style16b' align='center'>
+		<tr >
+			<td  colspan='2'>
+				<div class='h3' align='center'>
 					<?php echo $dept_name; ?> 
 				</div>
 			</td>
 		</tr>
 		<tr class="table"><td colspan="2">&nbsp;</td></tr>
 		<tr>
-			<td class='tbl' style='font-weight: bold;'><?php echo 'DISTRICT 5 '.$dept_jobs[$dept]['title'];?></td>
-			<td class='tbl' style='font-weight: bold;'>
+			<td  style='font-weight: bold;'><?php echo 'DISTRICT 5 '.$dept_jobs[$dept]['title'];?></td>
+			<td  style='font-weight: bold;'>
 <?php 
 				if ($pic_avail){
 ?>
@@ -70,8 +70,8 @@ defined('_JEXEC') or die('Restricted access');
 <?php
 	if (isset($dept_jobs[$dept+1])){
 ?>
-		<td class='tbl'><?php echo 'DISTRICT 5 '.$dept_jobs[$dept+1]['title'];?></td>
-		<td class='tbl'><?php echo $dept_jobs[$dept+1]['name'];?></td>
+		<td ><?php echo 'DISTRICT 5 '.$dept_jobs[$dept+1]['title'];?></td>
+		<td ><?php echo $dept_jobs[$dept+1]['name'];?></td>
 		<tr class="table"><td colspan="2">&nbsp;</td></tr>
 <?php 
 		unset($dept_jobs[$dept+1]);
@@ -81,7 +81,7 @@ defined('_JEXEC') or die('Restricted access');
 ?>			
 			<tr class="table"><td colspan="2">&nbsp;</td></tr>
 		    <tr>
-		    	<td colspan='2' class='tbl'>
+		    	<td colspan='2' >
 					<div align='left' class='style14b'>
 						<?php echo $job['title']; ?>
 					</div>
@@ -93,7 +93,7 @@ defined('_JEXEC') or die('Restricted access');
 ?>
 			<tr>
 				<td >
-					<div align='left' class='tbl'>
+					<div align='left' >
 						<?php echo $job['mbrs'][$i]; ?>
 					</div>
 				</td>
@@ -102,7 +102,7 @@ defined('_JEXEC') or die('Restricted access');
 				$i ++;
 				if ($i < count($job['mbrs'])){
 ?>
-					<div align='left' class='tbl'>
+					<div align='left' >
 						<?php echo $job['mbrs'][$i]; ?>
 					</div>
 <?php 
@@ -119,7 +119,7 @@ defined('_JEXEC') or die('Restricted access');
 ?>
 			<tr class="table"><td colspan="2">&nbsp;</td></tr>
 			<tr>
-				<td class='tbl' colspan='2'><?php echo $job['title'];?></td>
+				<td  colspan='2'><?php echo $job['title'];?></td>
 			</tr>
 <?php
 				foreach($job['named'] as $name){
@@ -127,7 +127,7 @@ defined('_JEXEC') or die('Restricted access');
 ?>
 			<tr>
 				<td></td>
-				<td class='tbl'><?php echo $name;?></td>
+				<td ><?php echo $name;?></td>
 			</tr>
 <?php 					
 				}
